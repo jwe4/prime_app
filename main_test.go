@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"io"
 	"os"
 	"strings"
@@ -93,6 +94,16 @@ func Test_intro(t *testing.T) {
 
 	if !strings.Contains(string(out), "Enter a whole number") {
 		t.Errorf("intro text not correct; got %s", string(out))
+	}
+
+}
+func Test_checkNumbers(t *testing.T) {
+	input := strings.NewReader("7")
+	reader := bufio.NewScanner(input)
+	res, _ := checkNumbers(reader)
+
+	if !strings.EqualFold(res, "7 is a prime number!") {
+		t.Error("incorrect value returned")
 	}
 
 }
