@@ -18,7 +18,7 @@ func isPrime(n int) (bool, string) {
 	if n == 0 || n == 1 {
 		return false, fmt.Sprintf("%d is not prime, by definition!", n)
 	} else if n < 0 {
-		return false, fmt.Sprintf("Negative numbers not prime, by definition!")
+		return false, fmt.Sprintf("Negative numbers are not prime, by definition!")
 	}
 	// use the modulus operator, repeatedly to see if we have a prime number
 	for i := 2; i <= n/2; i++ {
